@@ -1,0 +1,38 @@
+localId,TalkerId,Type,SubType,IsSender,CreateTime,Status,StrContent,StrTime,Remark,NickName,Sender
+1001,38,1,0,0,1704067200,2,Hey! Ready to start the new semester?,2024-01-01 08:00:00,Study Group,Alice,wxid_alice123
+1002,38,1,0,1,1704067260,2,Yes! But I heard the algorithms course is really tough 😰,2024-01-01 08:01:00,Study Group,Bob,wxid_bob456
+1003,38,1,0,0,1704067320,2,We can study together! I got some good resources from seniors,2024-01-01 08:02:00,Study Group,Alice,wxid_alice123
+1004,38,1,0,1,1704067380,2,That would be great! When do you want to start?,2024-01-01 08:03:00,Study Group,Bob,wxid_bob456
+1005,38,1,0,0,1704067440,2,How about tomorrow at the library? 2pm?,2024-01-01 08:04:00,Study Group,Alice,wxid_alice123
+1006,38,1,0,1,1704067500,2,Perfect! I'll bring my laptop and notes 💻,2024-01-01 08:05:00,Study Group,Bob,wxid_bob456
+1007,38,1,0,0,1728136442,2,Hey, could you help me with the algorithm assignment?,2024-03-15 10:54:02,Study Group,Alice,wxid_alice123
+1008,38,1,0,1,1728136447,2,Sure! Which part are you stuck on?,2024-03-15 10:54:07,Study Group,Bob,wxid_bob456
+1009,38,1,0,0,1728136461,2,The dynamic programming part is really confusing me,2024-03-15 10:54:21,Study Group,Alice,wxid_alice123
+1010,38,1,0,1,1728136662,2,Let me explain it step by step. First, we need to identify the subproblems.,2024-03-15 10:57:42,Study Group,Bob,wxid_bob456
+1011,38,1,0,0,1728214695,2,That makes sense! I think I'm starting to get it,2024-03-15 11:38:15,Study Group,Alice,wxid_alice123
+1012,38,1,0,1,1728214715,2,Great! Practice with these example problems and let me know if you need more help,2024-03-15 11:38:35,Study Group,Bob,wxid_bob456
+1013,38,1,0,0,1728214721,2,Thanks so much! You explained it better than the textbook 😊,2024-03-15 11:38:41,Study Group,Alice,wxid_alice123
+1014,38,1,0,1,1728214797,2,Happy to help! Keep practicing and you'll master it,2024-03-15 11:39:57,Study Group,Bob,wxid_bob456
+1015,38,1,0,0,1728214876,2,I will! Want to study together for the exam next week?,2024-03-15 11:41:16,Study Group,Alice,wxid_alice123
+1016,38,1,0,1,1728214896,2,Definitely! Let's meet at the library tomorrow,2024-03-15 11:41:36,Study Group,Bob,wxid_bob456
+1495,38,1,0,0,1719792000,2,Can't believe we're almost done with the semester!,2024-06-30 20:00:00,Study Group,Alice,wxid_alice123
+1496,38,1,0,1,1719792060,2,Yeah, time flies! Remember when we were struggling with sorting algorithms? 😄,2024-06-30 20:01:00,Study Group,Bob,wxid_bob456
+1497,38,1,0,0,1719792120,2,And now we're acing the final project! We've come so far 🎉,2024-06-30 20:02:00,Study Group,Alice,wxid_alice123
+1498,38,1,0,1,1719792180,2,Couldn't have done it without our study group!,2024-06-30 20:03:00,Study Group,Bob,wxid_bob456
+1499,38,1,0,0,1719792240,2,Let's keep this going next semester too?,2024-06-30 20:04:00,Study Group,Alice,wxid_alice123
+1500,38,1,0,1,1719792300,2,Absolutely! We make a great team! 🤝,2024-06-30 20:05:00,Study Group,Bob,wxid_bob456
+1501,38,1,0,0,1704153600,2,Hey, starting the database course today. Anyone taken it before?,2024-01-02 08:00:00,Study Group,Alice,wxid_alice123
+1502,38,1,0,1,1704153660,2,Yeah, it's challenging but interesting! Focus on normalization concepts,2024-01-02 08:01:00,Study Group,Bob,wxid_bob456
+1503,38,1,0,0,1704153720,2,Thanks! Any recommended resources?,2024-01-02 08:02:00,Study Group,Alice,wxid_alice123
+1504,38,1,0,1,1704153780,2,Check out Stanford's online materials, they're really good!,2024-01-02 08:03:00,Study Group,Bob,wxid_bob456
+1998,38,1,0,0,1719878340,2,Final project presentation tomorrow! So nervous! 😰,2024-06-30 19:59:00,Study Group,Alice,wxid_alice123
+1999,38,1,0,1,1719878400,2,You'll do great! We've practiced so many times! 💪,2024-06-30 20:00:00,Study Group,Bob,wxid_bob456
+2000,38,1,0,0,1719878460,2,Thanks for all the support this semester! Couldn't have done it without you! 🙏,2024-06-30 20:01:00,Study Group,Alice,wxid_alice123
+2001,38,1,0,0,1705305600,2,Stuck on this binary tree problem. Anyone free to help? 🤔,2024-01-15 10:00:00,Study Group,Alice,wxid_alice123
+2002,38,1,0,1,1705305660,2,Sure! What's the issue? Post the problem description.,2024-01-15 10:01:00,Study Group,Bob,wxid_bob456
+2003,38,1,0,0,1705305720,2,Need to find the lowest common ancestor. Here's my code so far...,2024-01-15 10:02:00,Study Group,Alice,wxid_alice123
+2004,38,1,0,1,1705305780,2,Ah, I see the issue. You're not handling the null case correctly.,2024-01-15 10:03:00,Study Group,Bob,wxid_bob456
+2005,38,1,0,0,1705305840,2,Oh! That makes sense. Let me fix that and try again.,2024-01-15 10:04:00,Study Group,Alice,wxid_alice123
+2995,38,1,0,0,1719792000,2,Finally finished implementing the red-black tree! 🎉,2024-06-30 20:00:00,Study Group,Alice,wxid_alice123
+2996,38,1,0,1,1719792060,2,Nice work! Want to present it in tomorrow's study group? 📊,2024-06-30 20:01:00,Study Group,Bob,wxid_bob456
+2997,38,1,0,0,1719792120,2,Sure! I'll prepare some visualization slides too! 💻,2024-06-30 20:02:00,Study Group,Alice,wxid_alice123 
