@@ -1,3 +1,11 @@
 backend/.venv/
 
+backend/static/*
+!backend/static/.gitkeep
+!backend/static/images/.gitkeep
+!backend/static/uploads/.gitkeep
+
+backend/uploads/*
+!backend/uploads/.gitkeep
+
 frontend/node_modules/
