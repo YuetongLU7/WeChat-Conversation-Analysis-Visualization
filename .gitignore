@@ -9,3 +9,4 @@ backend/uploads/*
 !backend/uploads/.gitkeep
 
 frontend/node_modules/
+node_modules

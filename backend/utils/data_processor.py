@@ -116,15 +116,12 @@ def process_chat_data(file_path, analysis_id):
     records = records[~records_not_want]
     records.index = range(records.shape[0])
     
-    # 修复：改进停用词文件路径的获取方式
-    # 绝对路径
+    # 修复：修改文件路径，使用 backend/data 目录
     current_file_path = os.path.abspath(__file__)
-    base_dir = os.path.dirname(os.path.dirname(os.path.dirname(current_file_path)))
+    base_dir = os.path.dirname(os.path.dirname(current_file_path))  # 修改为指向 backend 目录
     
-    emoji_file = os.path.join(base_dir, 'input_data', 'emoji.txt')
-    stopword_file = os.path.join(base_dir, 'input_data', 'stopwords_hit_modified.txt')
-    transform_file = os.path.join(base_dir, 'input_data', 'transformDict.txt')
-    user_dict_file = os.path.join(base_dir, 'input_data', 'userDict.txt')
+    emoji_file = os.path.join(base_dir, 'data', 'emoji.txt')
+    stopword_file = os.path.join(base_dir, 'data', 'stop_words.txt')  # 修改为实际文件名
     
     print(f"Using stopword file: {stopword_file}")
     
@@ -145,21 +142,8 @@ def process_chat_data(file_path, analysis_id):
     except Exception as e:
         print(f"Error loading stopwords: {e}")
         # 添加一个基本的停用词列表作为备用
-        stop_words = {'一个','吧','吗','我', '你', '的', '了', '在', '是', '有', '和', '不', '这', '我们', '你们', '他们', '那', '就', '也', '都', '很', '到', '说'}
+        stop_words = {'吃','喝','玩','买','一个','吧','吗','我', '你', '的', '了', '在', '是', '有', '和', '不', '这', '我们', '你们', '他们', '那', '就', '也', '都', '很', '到', '说'}
         print(f"Using fallback stopwords: {stop_words}")
-    
-    # Load transform dictionary
-    try:
-        transformDict = pd.read_table(transform_file).set_index('original').to_dict()['transformed']
-    except Exception as e:
-        print(f"Error loading transform dictionary: {e}")
-        transformDict = {}
-    
-    # Load user dictionary
-    try:
-        jieba.load_userdict(user_dict_file)
-    except Exception as e:
-        print(f"Error loading user dictionary: {e}")
     
     # Process records
     records['keywords'] = [''] * records.shape[0]
@@ -203,8 +187,6 @@ def process_chat_data(file_path, analysis_id):
             if word and re.findall(r'[\[\]一-龟a-zA-Z0-9]+', word) and \
                not re.findall(r'^\d{1,}$|^\d{1,}\.\d{1,}$', word) and \
                not re.findall('^[a-zA-Z]$', word):
-                if word in transformDict:
-                    word = transformDict[word]
                 result.append(word)
         
         # 处理表情
