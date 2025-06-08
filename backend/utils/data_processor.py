@@ -18,6 +18,7 @@ from pyecharts import options as opts
 from pyecharts.charts import WordCloud as PyechartsWordCloud
 from pyecharts.globals import ThemeType
 from googletrans import Translator
+from .translator import get_translator
 
 # 添加配置变量 - 是否启用emoji符号
 USE_EMOJI_SYMBOLS = True
@@ -513,7 +514,7 @@ def generate_calendar_heatmap(records, output_dir):
 
 def extract_keywords(records):
     """
-    Extract keywords without translation for sentiment analysis
+    Extract keywords and translate them for sentiment analysis
     """
     # Extract all keywords
     all_keywords = ', '.join(records['keywords'].dropna().tolist()).split(', ')
@@ -524,9 +525,58 @@ def extract_keywords(records):
     # Get top 200 words
     top_words = [word for word, _ in word_counter.most_common(200)]
     
+    # Translate only top 20 keywords to French
+    try:
+        # Get translator instance
+        translator = get_translator()
+        
+        # Get only top 20 words
+        top20_words = top_words[:20]
+        
+        # Filter out non-Chinese words to avoid unnecessary translations
+        chinese_words = []
+        non_chinese_indices = []
+        
+        for i, word in enumerate(top20_words):
+            # Check if the word contains Chinese characters
+            if any('\u4e00' <= char <= '\u9fff' for char in word):
+                chinese_words.append(word)
+            else:
+                non_chinese_indices.append(i)
+        
+        if chinese_words:
+            print(f"Translating {len(chinese_words)} Chinese keywords (from top 20) to French...")
+            
+            # Translate only Chinese words
+            results = translator.batch_translate(chinese_words, source="zh-CN", target="fr")
+            translated_chinese = [result.translation for result in results]
+            
+            # Reconstruct the translated top 20 list
+            translated_top20 = []
+            chinese_idx = 0
+            
+            for i in range(len(top20_words)):
+                if i in non_chinese_indices:
+                    translated_top20.append(top20_words[i])  # Keep non-Chinese words as is
+                else:
+                    translated_top20.append(translated_chinese[chinese_idx])
+                    chinese_idx += 1
+            
+            # Combine translated top 20 with original rest
+            translated_words = translated_top20 + top_words[20:]
+            
+            print(f"Top keywords translation completed")
+        else:
+            print("No Chinese words found in top 20 keywords")
+            translated_words = top_words
+    except Exception as e:
+        print(f"Keywords translation failed: {e}")
+        # Use original keywords if translation fails
+        translated_words = top_words
+    
     return {
         'original': top_words,
-        'translated': top_words,  # Same as original, no translation needed
+        'translated': translated_words,
         'frequencies': [word_counter[word] for word in top_words]
     }
 

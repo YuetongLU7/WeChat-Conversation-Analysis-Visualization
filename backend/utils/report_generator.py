@@ -239,7 +239,7 @@ def generate_pdf_report(analysis_results, sentiment_results, output_path):
     frequencies = keywords_data.get('frequencies', [])[:20]
     
     # Create table data
-    table_data = [["排名 (Rank)", "中文词汇 (Chinese)", "英文翻译 (English)", "频次 (Frequency)"]]
+    table_data = [["排名 (Rank)", "中文词汇 (Chinese)", "法语翻译 (French)", "频次 (Frequency)"]]
     
     for i, (original, translated, freq) in enumerate(zip(original_keywords, translated_keywords, frequencies)):
         table_data.append([str(i+1), original, translated, str(freq)])
